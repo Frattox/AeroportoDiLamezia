@@ -1,15 +1,16 @@
 package gui;
+
 public class MetodoDiPagamento {
     private int numero;
     private String tipologia;
     private int limiteTransazione;
-    private String CFUtente; // Aggiungiamo CFUtente per il collegamento con il Passeggero
+    private Passeggero passeggero; // Aggiungiamo CFUtente per il collegamento con il Passeggero
 
-    public MetodoDiPagamento(int numero, String tipologia, int limiteTransazione, String CFUtente) {
+    public MetodoDiPagamento(int numero, String tipologia, int limiteTransazione, Passeggero passeggero) {
         this.numero = numero;
         this.tipologia = tipologia;
         this.limiteTransazione = limiteTransazione;
-        this.CFUtente = CFUtente;
+        this.passeggero = passeggero;
     }
 
     // Getters and Setters
@@ -37,11 +38,11 @@ public class MetodoDiPagamento {
         this.limiteTransazione = limiteTransazione;
     }
 
-    public String getCFUtente() {
-        return CFUtente;
+    public Passeggero getPasseggero() {
+        return passeggero;
     }
 
-    public void setCFUtente(String CFUtente) {
-        this.CFUtente = CFUtente;
+    public void setPasseggero(Passeggero passeggero) {
+        this.passeggero = passeggero;
     }
 }

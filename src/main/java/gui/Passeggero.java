@@ -1,5 +1,5 @@
 package gui;
-public class Cliente {
+public class Passeggero {
     private String cf;
     private String nome;
     private String cognome;
@@ -7,7 +7,7 @@ public class Cliente {
     private String password;
 
     // Constructor
-    public Cliente(String cf, String nome, String cognome, String email, String password) {
+    public Passeggero(String cf, String nome, String cognome, String email, String password) {
         this.cf = cf;
         this.nome = nome;
         this.cognome = cognome;

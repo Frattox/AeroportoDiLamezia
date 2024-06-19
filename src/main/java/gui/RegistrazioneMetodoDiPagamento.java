@@ -21,7 +21,7 @@ public class RegistrazioneMetodoDiPagamento extends JFrame{
     private JLabel campiVuoti;
 
 
-    public RegistrazioneMetodoDiPagamento(String CF,String nome,String cognome,String email, String password){
+    public RegistrazioneMetodoDiPagamento(Passeggero passeggero){
         setContentPane(regMpanel);
         setTitle("Aeroporto Lamezia Terme");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -56,7 +56,7 @@ public class RegistrazioneMetodoDiPagamento extends JFrame{
                     logC.setVisible(true);
                     setVisible(false);
                 }
-                MetodoDiPagamento metodo = new MetodoDiPagamento(numeroI, tipo, limiteI, CF);
+                MetodoDiPagamento metodo = new MetodoDiPagamento(numeroI, tipo, limiteI, passeggero);
                 boolean success = sendPostRequest(metodo);
                 if (success) {
                     LoginCliente logC = new LoginCliente();

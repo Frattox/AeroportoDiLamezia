@@ -43,10 +43,10 @@ public class RegistrazioneCliente extends JFrame {
                     campiVuoti.setVisible(true);
                 }
                 else {
-                    Cliente cliente = new Cliente(CF, nome, cognome, email, password);
-                    boolean success = sendPostRequest(cliente);
+                    Passeggero passeggero = new Passeggero(CF, nome, cognome, email, password);
+                    boolean success = sendPostRequest(passeggero);
                     if (success) {
-                        RegistrazioneMetodoDiPagamento regM = new RegistrazioneMetodoDiPagamento(CF,nome,cognome,email,password);
+                        RegistrazioneMetodoDiPagamento regM = new RegistrazioneMetodoDiPagamento(passeggero);
                         regM.setVisible(true);
                         setVisible(false);
                     } else {
@@ -58,7 +58,7 @@ public class RegistrazioneCliente extends JFrame {
 
 
     }
-    private boolean sendPostRequest(Cliente cliente) {
+    private boolean sendPostRequest(Passeggero passeggero) {
         try {
             URL url = new URL("http://localhost:8080/passeggeri"); // Cambia l'URL se necessario
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -68,7 +68,7 @@ public class RegistrazioneCliente extends JFrame {
             connection.setDoOutput(true);
 
             ObjectMapper objectMapper = new ObjectMapper();
-            String jsonInputString = objectMapper.writeValueAsString(cliente);
+            String jsonInputString = objectMapper.writeValueAsString(passeggero);
 
             try (OutputStream os = connection.getOutputStream()) {
                 byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
