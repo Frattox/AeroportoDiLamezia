@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PasseggeroRepository extends JpaRepository<Passeggero,String> {
+    boolean existsByCf(String cf);
 }
