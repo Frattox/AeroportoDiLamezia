@@ -7,7 +7,7 @@ import java.util.Collection;
 
 @Data
 @Entity
-@Table(name = "\"org.example.aeroporto3.Passeggero\"")
+@Table(name = "\"Passeggero\"")
 public class Passeggero {
     @Id
     @Column(name = "\"CF\"")
